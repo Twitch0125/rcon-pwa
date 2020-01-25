@@ -4,10 +4,10 @@ export const state = () => ({
 })
 
 export const mutations = {
-  AddHistory(state, command) {
+  addHistory(state, command) {
     state.history.push(command)
   },
-  SetConnection(state, connection) {
+  setConnection(state, connection) {
     state.connection = connection
   }
 }

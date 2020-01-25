@@ -5,20 +5,14 @@
     <v-text-field filled v-model="password" label="Password" type="password"></v-text-field>
     <v-row align="center" align-content="center" justify="center">
       <v-col>
-        <v-text-field outlined label="Save as" placeholder="My Server..."></v-text-field>
+        <v-text-field v-model="name" outlined label="Save as" placeholder="My Server..."></v-text-field>
       </v-col>
       <v-col>
-        <v-btn text>Save</v-btn>
+        <v-btn @click="addServer()" text>Save</v-btn>
       </v-col>
     </v-row>
 
     <v-btn @click="setConnection()" outlined>Connect</v-btn>
-
-    <ul>
-      <li>{{host}}</li>
-      <li>{{port}}</li>
-      <li>{{password}}</li>
-    </ul>
   </div>
 </template>
 
@@ -26,6 +20,7 @@
 import { ref, computed } from '@vue/composition-api'
 export default {
   setup(props, { root: { $store } }) {
+    let name = ref('')
     let host = ref('')
     let port = ref('')
     let password = ref('')
@@ -35,9 +30,11 @@ export default {
       password: password.value
     }))
     const setConnection = () =>
-      $store.commit('console/SetConnection', rconConnection.value)
+      $store.commit('console/setConnection', rconConnection.value)
 
-    return { host, port, password, rconConnection, setConnection }
+    const addServer = () => $store.commit('saved/addServer', {rconConnection, name})
+
+    return { host, port, password, rconConnection, setConnection, name, addServer }
   }
 }
 </script>
