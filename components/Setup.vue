@@ -38,7 +38,7 @@ export default {
     let port = ref('')
     let password = ref('')
     let rconConnection = computed(() => ({ host: host.value, port: port.value, password: password.value }))
-    const setConnection = () => context.$store.commit('Console/setConnection', rconConnection.value)
+    const setConnection = () => context.store.commit('Console/setConnection', rconConnection.value)
 
     return { host, port, password, rconConnection, setConnection }
   }
