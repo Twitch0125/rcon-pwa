@@ -15,6 +15,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@vue/composition-api": "^0.3.4",
+    "net": "^1.0.2",
     "nuxt": "^2.0.0",
     "rcon-client": "^4.2.0"
   },
