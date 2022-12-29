@@ -1,3 +1,7 @@
+# Dead Project
+Marking this as archived since I never really plan on going back to this, but I wanna keep my first programming projects around.
+I think this might've been a 2nd attempt after the rcon-gui I attempted?
+
 # rcon-pwa
 
 > My dazzling Nuxt.js project
